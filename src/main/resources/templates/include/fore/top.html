@@ -1,0 +1,30 @@
+<nav class="top" th:fragment="html">
+    <a th:href="${application.contextPath}">
+        <span style="color:#C40000;margin:0px" class=" glyphicon glyphicon-home redColor"></span>
+       EPSOP HOMEPAGE
+    </a>
+
+    <span>Welcome to EPSOP!</span>
+
+    <span th:if="${null!=session.user}">
+		<a href="login" th:text="${session.user.name}"></a>
+		<a href="forelogout" >EXIT</a>
+	</span>
+
+
+    <span th:if="${null==session.user}">
+		<a href="login">LOG IN</a>
+		<a href="register">REGISTER</a>
+	</span>
+
+
+    <span class="pull-right">
+			<a href="bought">MY ITEM</a>
+			<a href="cart">
+			<span style="color:#C40000;margin:0px" class=" glyphicon glyphicon-shopping-cart redColor"></span>
+			CART<strong th:text="${session.cartTotalItemNumber}"></strong>TIME </a>
+	</span>
+</nav>
+
+
+
